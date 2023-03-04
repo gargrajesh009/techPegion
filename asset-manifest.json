@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/techPegion/static/css/main.e6c13ad2.css",
+    "main.js": "/techPegion/static/js/main.52484104.js",
+    "static/js/787.e9b54d54.chunk.js": "/techPegion/static/js/787.e9b54d54.chunk.js",
+    "index.html": "/techPegion/index.html",
+    "main.e6c13ad2.css.map": "/techPegion/static/css/main.e6c13ad2.css.map",
+    "main.52484104.js.map": "/techPegion/static/js/main.52484104.js.map",
+    "787.e9b54d54.chunk.js.map": "/techPegion/static/js/787.e9b54d54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.52484104.js"
+  ]
+}
