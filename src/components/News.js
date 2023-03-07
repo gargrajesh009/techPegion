@@ -13,7 +13,7 @@ export default class News extends Component {
   }
   async componentDidMount() {
     let url =
-      "https://newsapi.org/v2/everything?sources=techcrunch&apiKey=f87d689e2b50488fa5434d1d1e28a036&pageSize=18";
+      `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=f87d689e2b50488fa5434d1d1e28a036&pageSize=18`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -25,7 +25,7 @@ export default class News extends Component {
   }
 
   handlebNextClick = async () => {
-    let url = `https://newsapi.org/v2/everything?sources=techcrunch&apiKey=f87d689e2b50488fa5434d1d1e28a036&page=${
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=f87d689e2b50488fa5434d1d1e28a036&page=${
       this.state.page + 1
     }&pageSize=18`;
     this.setState({ loading: true });
@@ -38,7 +38,7 @@ export default class News extends Component {
     });
   };
   handlebPreviousClick = async () => {
-    let url = `https://newsapi.org/v2/everything?sources=techcrunch&apiKey=f87d689e2b50488fa5434d1d1e28a036&page=${
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=f87d689e2b50488fa5434d1d1e28a036&page=${
       this.state.page - 1
     }&pageSize=18`;
     this.setState({ loading: true });

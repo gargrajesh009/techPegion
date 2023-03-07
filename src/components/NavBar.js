@@ -5,8 +5,8 @@ export default class NavBar extends Component {
     return (
       <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark"    >
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            TechPegion
+          <a className="navbar-brand" href="/general">
+            NewsLetter
           </a>
           <button
             className="navbar-toggler"
@@ -22,8 +22,33 @@ export default class NavBar extends Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <a className="nav-link active" aria-current="page" href="/general">
                   Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/business">
+                  Business
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/entertainment">
+                  Entertainment
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/health">
+                  Health
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/science">
+                  Science
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/technology">
+                  Technology
                 </a>
               </li>
             </ul>
