@@ -12,15 +12,7 @@ export default class News extends Component {
     };
   }
   async componentDidMount() {
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=f87d689e2b50488fa5434d1d1e28a036&pageSize=18`;
-    this.setState({ loading: true });
-    let data = await fetch(url);
-    let parsedData = await data.json();
-    this.setState({
-      articles: parsedData.articles,
-      totalResult: parsedData.totalResults,
-      loading: false,
-    });
+   this.updateNews();
   }
 
   async updateNews() {
@@ -30,6 +22,7 @@ export default class News extends Component {
     let parsedData = await data.json();
     this.setState({
       articles: parsedData.articles,
+      totalResult: parsedData.totalResults,
       loading: false,
     });
   }
@@ -59,6 +52,7 @@ export default class News extends Component {
                     newsUrl={ele.url}
                     author={ele.author}
                     date={ele.publishedAt}
+                    source={ele.source.name}
                   />
                 )}
               </div>
