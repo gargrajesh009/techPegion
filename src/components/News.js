@@ -12,43 +12,34 @@ export default class News extends Component {
     };
   }
   async componentDidMount() {
-    let url =
-      `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=f87d689e2b50488fa5434d1d1e28a036&pageSize=18`;
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=f87d689e2b50488fa5434d1d1e28a036&pageSize=18`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
     this.setState({
       articles: parsedData.articles,
-      totalResult: parsedData.totalResult,
+      totalResult: parsedData.totalResults,
       loading: false,
     });
   }
 
-  handlebNextClick = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=f87d689e2b50488fa5434d1d1e28a036&page=${
-      this.state.page + 1
-    }&pageSize=18`;
+  async updateNews() {
+    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=f87d689e2b50488fa5434d1d1e28a036&page=${this.state.page}&pageSize=18`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
     this.setState({
       articles: parsedData.articles,
-      page: this.state.page + 1,
       loading: false,
     });
+  }
+  handlebNextClick = async () => {
+    this.setState({ page: this.state.page + 1 });
+    this.updateNews();
   };
   handlebPreviousClick = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=f87d689e2b50488fa5434d1d1e28a036&page=${
-      this.state.page - 1
-    }&pageSize=18`;
-    this.setState({ loading: true });
-    let data = await fetch(url);
-    let parsedData = await data.json();
-    this.setState({
-      articles: parsedData.articles,
-      page: this.state.page - 1,
-      loading: false,
-    });
+    this.setState({ page: this.state.page - 1 });
+    this.updateNews();
   };
 
   render() {
