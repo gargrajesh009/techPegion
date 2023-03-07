@@ -1,13 +1,14 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class NavBar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark"    >
         <div className="container-fluid">
-          <a className="navbar-brand" href="/general">
+          <Link className="navbar-brand" to="/general">
             NewsLetter
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -22,34 +23,34 @@ export default class NavBar extends Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/general">
+                <Link className="nav-link active" aria-current="page" to="/general">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/business">
+                <Link className="nav-link active" aria-current="page" to="/business">
                   Business
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/entertainment">
+                <Link className="nav-link active" aria-current="page" to="/entertainment">
                   Entertainment
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/health">
+                <Link className="nav-link active" aria-current="page" to="/health">
                   Health
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/science">
+                <Link className="nav-link active" aria-current="page" to="/science">
                   Science
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/technology">
+                <Link className="nav-link active" aria-current="page" to="/technology">
                   Technology
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

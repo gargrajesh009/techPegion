@@ -66,6 +66,8 @@ export default class News extends Component {
                     discription={ele.description}
                     imgUrl={ele.urlToImage}
                     newsUrl={ele.url}
+                    author={ele.author}
+                    date={ele.publishedAt}
                   />
                 )}
               </div>
