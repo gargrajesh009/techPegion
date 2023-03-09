@@ -9,13 +9,17 @@ export default class App extends Component {
       <div>
         <NavBar />
         <Routes>
+        <Route
+            path="/"
+            element={<News key="home" category="general" />}
+          />
           <Route
             path="/business"
             element={<News key="business" category="business" />}
           />
           <Route
             path="/entertainment"
-            element={<News key="business" category="entertainment" />}
+            element={<News key="entertainment" category="entertainment" />}
           />
           <Route
             path="/general"
